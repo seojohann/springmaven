@@ -1,0 +1,51 @@
+package com.jsbomb.spring.bmicalc;
+
+import java.util.ArrayList;
+
+public class PersonalInfo {
+
+	private String name;
+	private double height;
+	private double weight;
+	private BmiCalculator bmiCalculator;
+	private ArrayList<String> hobbies;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getHeight() {
+		return height;
+	}
+	public void setHeight(double height) {
+		this.height = height;
+	}
+	public double getWeight() {
+		return weight;
+	}
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+	public BmiCalculator getBmiCalculator() {
+		return bmiCalculator;
+	}
+	public void setBmiCalculator(BmiCalculator bmiCalculator) {
+		this.bmiCalculator = bmiCalculator;
+	}
+	public ArrayList<String> getHobbies() {
+		return hobbies;
+	}
+	public void setHobbies(ArrayList<String> hobbies) {
+		this.hobbies = hobbies;
+	}
+	
+	public void print() {
+		System.out.println("name : " + this.name);
+		System.out.println("height : " + this.height);
+		System.out.println("weight : " + this.weight);
+		System.out.println("hobbies : " + hobbies);
+		bmiCalculator.checkBmi(weight, height);
+	}
+}
