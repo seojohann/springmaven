@@ -1,11 +1,11 @@
 package com.jsbomb.spring.javaconfig.bmicalc;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BmiCalculator {
 	
+	@SuppressWarnings("unused")
 	private double underWeight;
 	private double normal;
 	private double overWeight;

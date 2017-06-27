@@ -9,20 +9,21 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class AopLog {
 
-	@Pointcut("within(com.jsbomb.spring.aop.*)")
+	public AopLog() {}
+	
+	@Pointcut("execution(* com.jsbomb.spring.aop.Person.getInfo())")
 	public void pointCutMethod() {
 		
 	}
 	
 	@Around("pointCutMethod()")
-	public Object printLog(ProceedingJoinPoint point) throws Throwable {
+	public void printLog(ProceedingJoinPoint point) throws Throwable {
 		String signature = point.getSignature().toShortString();
 		long time = System.currentTimeMillis();
 		System.out.println(signature + " start at " + time);
 		
 		try {
-			Object obj = point.proceed();
-			return obj;
+			point.proceed();
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
@@ -31,7 +32,7 @@ public class AopLog {
 		}
 	}
 	
-	@Before("within(com.jsbomb.spring.aop.*)")
+	@Before("pointCutMethod()")
 	public void beforeAdvice() {
 		System.out.println("before advice");
 	}

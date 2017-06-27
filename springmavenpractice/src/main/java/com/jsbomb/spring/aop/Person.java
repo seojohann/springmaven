@@ -1,8 +1,5 @@
 package com.jsbomb.spring.aop;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public abstract class Person {
 
 	private String name;

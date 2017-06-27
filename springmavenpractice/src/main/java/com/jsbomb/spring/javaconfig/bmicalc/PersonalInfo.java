@@ -14,18 +14,9 @@ public class PersonalInfo {
 	private BmiCalculator bmiCalculator;
 	private ArrayList<String> hobbies;
 	
-//	public PersonalInfo(PersonalInfo info) {
-//		this.name = info.name;
-//		this.height = info.height;
-//		this.weight = info.weight;
-//		this.bmiCalculator = info.bmiCalculator;
-//		this.hobbies = info.hobbies;
-//	}
-	
 	public String getName() {
 		return name;
 	}
-	
 	
 	public void setName(String name) {
 		this.name = name;
@@ -35,7 +26,6 @@ public class PersonalInfo {
 		return height;
 	}
 	
-	
 	public void setHeight(double height) {
 		this.height = height;
 	}
@@ -43,7 +33,6 @@ public class PersonalInfo {
 	public double getWeight() {
 		return weight;
 	}
-	
 	
 	public void setWeight(double weight) {
 		this.weight = weight;
@@ -61,7 +50,6 @@ public class PersonalInfo {
 	public ArrayList<String> getHobbies() {
 		return hobbies;
 	}
-	
 	
 	public void setHobbies(ArrayList<String> hobbies) {
 		this.hobbies = hobbies;

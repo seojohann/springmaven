@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Student extends Person{
-
 	
 	private int grade;
 	private int classNum;

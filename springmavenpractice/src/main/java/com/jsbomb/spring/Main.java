@@ -9,8 +9,6 @@ import com.jsbomb.spring.calc.Calculator;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		
 		String calculatorXml = "classpath:META-INF/calculator.xml";
 		String bmiCalcXml = "classpath:META-INF/bmicalculator.xml";
@@ -23,12 +21,11 @@ public class Main {
 		calculator.divide();
 		calculator.multiply();
 		
-//		configXml = "classpath:META-INF/bmicalculator.xml";
-//		context = new GenericXmlApplicationContext(configXml);
 		PersonalInfo info = context.getBean(PersonalInfo.class);
 		
 		info.print();
 		
+		context.close();
 	}
 
 }
