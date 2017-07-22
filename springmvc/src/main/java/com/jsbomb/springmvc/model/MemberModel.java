@@ -4,7 +4,7 @@ public class MemberModel {
 
 	private String name;
 	private String dob;
-	private String id;
+	private String loginId;
 	private String pw;
 	
 	public String getName() {
@@ -19,11 +19,11 @@ public class MemberModel {
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
-	public String getId() {
-		return id;
+	public String getLoginId() {
+		return loginId;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
 	}
 	public String getPw() {
 		return pw;

@@ -9,6 +9,12 @@
 	Hello world!  
 </h1>
 
+<%String context = request.getContextPath();%>
+
 <P>  The time on the server is ${serverTime}. </P>
+
+
+<a href="<%=context%>/board/inputInfo" id="inputInfo">link to inputInfo</a>
+<button id="buttonInput" onclick="inputInfo">button</button>
 </body>
 </html>

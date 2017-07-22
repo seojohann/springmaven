@@ -10,7 +10,7 @@
 
 Name: ${member.name}<br/>
 Dob: ${member.dob}<br/>
-id: ${member.id}<br/>
+id: ${member.loginId}<br/>
 pw: ${member.pw}<br/>
 </body>
 </html>

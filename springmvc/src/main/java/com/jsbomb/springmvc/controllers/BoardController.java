@@ -1,9 +1,14 @@
 package com.jsbomb.springmvc.controllers;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.jsbomb.springmvc.model.MemberModel;
+import com.jsbomb.springmvc.model.MemberValidator;
 
 @Controller
 @RequestMapping(value="/board")
@@ -67,21 +73,41 @@ public class BoardController {
 	@RequestMapping(value="/detailedUser", method = RequestMethod.GET)
 	public String getUserInfo3(@ModelAttribute(value="member") MemberModel memberModel) {
 		System.out.println("getUserInfo3 called ReqMethod.GET");
-//		System.out.println("name " + memberModel.getName());
-//		System.out.println("dob " + memberModel.getDob());
-//		System.out.println("id " + memberModel.getId());
-//		System.out.println("pw " + memberModel.getPw());
-//		model.addAttribute("model", memberModel);
+
 		return "board/detailedUser";
 	}
 	
 	@RequestMapping(value="/detailedUser", method = RequestMethod.POST)
-	public String getDetailedUser(@ModelAttribute("member") MemberModel memberModel) {
+	public String getDetailedUser(@ModelAttribute("member") MemberModel memberModel,
+			BindingResult result) {
 		System.out.println("getUserInfo3 called ReqMethod.POST");
-//		System.out.println("name " + memberModel.getName());
-//		System.out.println("dob " + memberModel.getDob());
-//		System.out.println("id " + memberModel.getId());
-//		System.out.println("pw " + memberModel.getPw());
+
+		
+		MemberValidator validator = new MemberValidator();
+		validator.validate(memberModel, result);
+		
+		if (result.hasErrors()) {
+			return "board/inputInfo";
+		}
+		
 		return "board/detailedUser";
+	}
+	
+	@RequestMapping(value="/detailedUser2", method = RequestMethod.POST)
+	public String getDetailedUser2(@ModelAttribute("member") @Valid MemberModel memberModel,
+			BindingResult result) {
+		System.out.println("getUserInfo3 called ReqMethod.POST");
+		
+		if (result.hasErrors()) {
+			return "board/inputInfo";
+		}
+		
+		return "board/detailedUser";
+	}
+	
+	@InitBinder
+	protected void initBinder(WebDataBinder binder) {
+		binder.setValidator(new MemberValidator());
+		
 	}
 }
