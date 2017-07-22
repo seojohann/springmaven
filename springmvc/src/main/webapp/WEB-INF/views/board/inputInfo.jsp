@@ -8,9 +8,14 @@
 </head>
 <body>
 
-Name: ${memberModel.name}<br/>
-Dob: ${memberModel.dob}<br/>
-id: ${memberModel.id}<br/>
-pw: ${memberModel.pw}<br/>
+<%String context = request.getContextPath();%>
+
+<form action="<%=context%>/board/detailedUser" method="post">
+	Name : <input type="text" name="name"><br />
+	DOB : <input type="text" name="dob"><br />
+	ID : <input type="text" name="id"><br />
+	PW : <input type="text" name="pw"><br />
+	<input type="submit" name="enter"/>
+</form>
 </body>
 </html>
