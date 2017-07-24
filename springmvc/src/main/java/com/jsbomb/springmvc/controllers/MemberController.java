@@ -20,7 +20,7 @@ import com.jsbomb.springmvc.model.MemberValidator;
 
 @Controller
 @RequestMapping(value="/board")
-public class BoardController {
+public class MemberController {
 
 	@RequestMapping(value={"/view"}, method = RequestMethod.GET)
 	public String boardView() {

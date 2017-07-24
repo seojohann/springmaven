@@ -12,11 +12,11 @@
 
 <form action="<%=context%>/board/detailedUser" method="post">
 	Name : <input type="text" name="name"><br />
-	DOB : <input type="text" name="dob"><br />
+	DOB (MM/DD/YYYY) : <input type="text" name="dob"><br />
 	ID : <input type="text" name="loginId"><br />
 	PW : <input type="text" name="pw"><br />
-	<input type="submit" name="enter"/>
-	<input type="submit" name="enter2"
+	<input type="submit" name="enter" value="enter"/>
+	<input type="submit" name="enter2" value="enter_validator"
 		onclick="form.action='<%=context%>/board/detailedUser';"/>
 </form>
 
