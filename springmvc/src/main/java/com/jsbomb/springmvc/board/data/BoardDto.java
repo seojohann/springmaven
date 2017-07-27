@@ -8,6 +8,7 @@ public class BoardDto {
 	int boardId;
 	String name;
 	String title;
+	String content;
 	Timestamp date;
 	int hit;
 	int group;
@@ -18,11 +19,12 @@ public class BoardDto {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public BoardDto(int boardId, String name, String title, Timestamp date,
-			int hit, int group, int step, int indent) {
+	public BoardDto(int boardId, String name, String title, String content,
+			Timestamp date,	int hit, int group, int step, int indent) {
 		this.boardId = boardId;
 		this.name = name;
 		this.title = title;
+		this.content = content;
 		this.date = date;
 		this.hit = hit;
 		this.group = group;
@@ -54,6 +56,14 @@ public class BoardDto {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public Timestamp getDate() {
@@ -94,9 +104,5 @@ public class BoardDto {
 
 	public void setIndent(int indent) {
 		this.indent = indent;
-	}
-
-
-	
-	
+	}	
 }
