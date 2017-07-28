@@ -36,4 +36,8 @@ public class HomeController {
 		return "home/home";
 	}
 	
+	@RequestMapping(value = "/jdbc", method = RequestMethod.GET)
+	public String jdbc() {
+		return "board/jdbc";
+	}
 }

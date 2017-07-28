@@ -15,6 +15,6 @@
 
 
 <a href="<%=context%>/board/inputInfo" id="inputInfo">link to inputInfo</a>
-<button id="buttonInput" onclick="inputInfo">button</button>
+
 </body>
 </html>

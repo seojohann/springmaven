@@ -80,14 +80,15 @@ public class MemberController {
 	@RequestMapping(value="/detailedUser", method = RequestMethod.POST)
 	public String getDetailedUser(@ModelAttribute("member") MemberModel memberModel,
 			BindingResult result) {
-		System.out.println("getUserInfo3 called ReqMethod.POST");
+		System.out.println("getDetailedUser called ReqMethod.POST");
 
 		
 		MemberValidator validator = new MemberValidator();
 		validator.validate(memberModel, result);
 		
 		if (result.hasErrors()) {
-			return "board/inputInfo";
+			System.out.println("getDetailedUser called but there's error");
+			return "redirect:inputInfo";
 		}
 		
 		return "board/detailedUser";
@@ -96,10 +97,11 @@ public class MemberController {
 	@RequestMapping(value="/detailedUser2", method = RequestMethod.POST)
 	public String getDetailedUser2(@ModelAttribute("member") @Valid MemberModel memberModel,
 			BindingResult result) {
-		System.out.println("getUserInfo3 called ReqMethod.POST");
+		System.out.println("getDetailedUser2 called ReqMethod.POST");
 		
 		if (result.hasErrors()) {
-			return "board/inputInfo";
+			System.out.println("getDetailedUser2 called but there's error");
+			return "redirect:inputInfo";
 		}
 		
 		return "board/detailedUser";
