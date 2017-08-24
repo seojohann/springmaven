@@ -3,7 +3,7 @@ package com.jsbomb.spring.aop3;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Rockband implements Performance {
+public class Rockband implements Performer {
 
 	@Override
 	public void perform() {

@@ -1,5 +1,5 @@
 package com.jsbomb.spring.aop3;
 
-public interface Performance {
+public interface Performer {
 	void perform();
 }

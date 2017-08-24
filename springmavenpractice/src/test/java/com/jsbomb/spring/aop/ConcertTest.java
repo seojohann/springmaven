@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.jsbomb.spring.aop3.Performance;
+import com.jsbomb.spring.aop3.Audience;
+import com.jsbomb.spring.aop3.Encoreable;
+import com.jsbomb.spring.aop3.Performer;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes=com.jsbomb.spring.aop3.ConcertConfig.class)
@@ -16,12 +18,18 @@ public class ConcertTest {
 
 	
 	@Autowired
-	Performance performance;
+	Performer performer;
+	
+	@Autowired
+	Encoreable encoreable;
 	
 	@Test
 	public void testPerformance() {
 		
-		performance.perform();
+		performer.perform();
+		
+		
+//		encoreable.performEncore();
 	}
 
 }

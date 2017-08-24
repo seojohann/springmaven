@@ -8,7 +8,7 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class Audience {
 
-	@Pointcut("execution(* com.jsbomb.spring.aop3.Performance.perform())")
+	@Pointcut("execution(* com.jsbomb.spring.aop3.Performer.perform())")
 	public void performance() { }
 	
 	@Before("performance()")
@@ -20,5 +20,10 @@ public class Audience {
 	@After("performance()")
 	public void afterPerformance() {
 		System.out.println("applaudes");
+	}
+	
+	@After("performance()")
+	public void shoutsEncore() {
+		System.out.println("audience shouts encore!!");
 	}
 }
