@@ -29,7 +29,7 @@ public class ConcertTest {
 		performer.perform();
 		
 		
-//		encoreable.performEncore();
+		encoreable.performEncore();
 	}
 
 }
