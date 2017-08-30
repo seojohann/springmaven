@@ -19,25 +19,28 @@ public class HomeControllerTest {
 	
 	@Before
 	public void beforeHomeTest() {
-		controller = new HomeController();
-		mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
+
 	}
 	
 	@Test
-	public void testHome() throws Exception {
-		mockMvc.perform(get("/home")).andExpect(view().name("home"));
+	public void testMain() throws Exception {
+		controller = new HomeController();
+		mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
+		mockMvc.perform(get("/main")).andExpect(view().name("home"));
 	}
 	
 	@Test
 	public void testHomePage() throws Exception {
-		
+		controller = new HomeController();
+		mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
 		mockMvc.perform(get("/homepage")).andExpect(view().name("home"));
 		
 	}
 	
 	@Test
 	public void testDefault() throws Exception {
-
+		controller = new HomeController();
+		mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
 		mockMvc.perform(get("/")).andExpect(view().name("home"));
 		
 	}
