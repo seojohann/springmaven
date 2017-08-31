@@ -37,9 +37,11 @@ public class SpitterControllerTest {
 				Mockito.mock(SpitterRepository.class);
 		
 		Spitter unsaved = 
-				new Spitter("jbauer", "24hours", "Jack", "Bauer");
+				new Spitter("jbauer", "24hours", "Jack", "Bauer",
+						"jbauer@24hours.com");
 		Spitter saved = 
-				new Spitter(24L, "jbauer", "24hours", "Jack", "Bauer");
+				new Spitter(24L, "jbauer", "24hours", "Jack", "Bauer",
+						"jbauer@24hours.com");
 		
 		when(mockRepository.save(unsaved)).thenReturn(saved);
 		
@@ -50,7 +52,8 @@ public class SpitterControllerTest {
 			.param("firstName", "Jack")
 			.param("lastName", "Bauer")
 			.param("username", "jbauer")
-			.param("password", "24hours"))
+			.param("password", "24hours")
+			.param("email", "jbauer@24hours.com"))
 			.andExpect(redirectedUrl("/spitter/jbauer"));
 		
 		verify(mockRepository, atLeastOnce()).save(unsaved);
