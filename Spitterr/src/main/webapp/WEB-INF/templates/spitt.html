@@ -1,0 +1,17 @@
+<!DOCTYPE htm>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Spittr>Spitt</title>
+<link rel="stylesheet" type="text/css" th:href="@{/resources/th_style.css}" />
+</head>
+<body>
+	<div class="spittView">
+		<div class="spittMessage">${spitt.message}</div>
+		<div>
+			<span class="spittTime">${spitt.time}</span>
+		</div>
+	</div>
+</body>
+</html>

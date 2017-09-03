@@ -26,9 +26,13 @@ public class SpittController {
 	
 	private SpittRepository spittRepository;
 	
+//	@Autowired
+//	public SpittController(SpittRepository repository) {
+//		this.spittRepository = repository;
+//	}
+	
 	@Autowired
-	public SpittController(SpittRepository repository) {
-		this.spittRepository = repository;
+	public SpittController() {
 	}
 	
 //	@RequestMapping(method=RequestMethod.GET)

@@ -22,11 +22,14 @@ public class SpitterController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	
 	@Autowired
-	public SpitterController(SpitterRepository repository) {
-		this.spitterRepository = repository;
+	public SpitterController() {
 	}
+	
+//	@Autowired
+//	public SpitterController(SpitterRepository repository) {
+//		this.spitterRepository = repository;
+//	}
 	
 	@RequestMapping(value="/register", method=RequestMethod.GET)
 	public String showRegisterationForm(Model model) {
@@ -43,7 +46,7 @@ public class SpitterController {
 		}
 		
 		logger.info("spitter before save = " + spitter.getUsername());
-		spitterRepository.save(spitter);
+//		spitterRepository.save(spitter);
 		
 		logger.info("spitter saved = " + spitter.getUsername());
 		return "redirect:/spitter/" + spitter.getUsername();

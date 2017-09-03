@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Spittr>Profile>${spitter.username}</title>
+<link rel="stylesheet" type="text/css" th:href="@{/resources/th_style.css}" />
+</head>
+<body>
+	<h1>Your Profile</h1>
+	
+	${spitter.username}<br/>
+	${spitter.firstName} ${spitter.lastName}
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Spittr>Recent</title>
+<link rel="stylesheet" type="text/css" th:href="@{/resources/th_style.css}" />
+
+</head>
+<body>
+<h1>Recent Spitts</h1>
+
+<ul class="spittList">
+	<li th:each="spitt : ${spittList}" id="'spitt_' + ${spitt.id}">
+		<div class="spittMessage" th:text="${spitt.message}">Spitt message</div>
+		<div>
+			<span class="spittTime" th:text="${spitt.time}">Spitt time</span>
+			<span class="spittLocation"
+				th:text="'(' + ${spitt.latitude} + ', ' + ${spitt.longitude} + ')'">
+				Spitt location</span>
+		</div>
+	</li>
+</ul>
+</body>
+</html>

@@ -9,11 +9,18 @@
 		href="<c:url value="/resources/style.css" />">
 </head>
 <body>
-<h1><s:message code="spittr.welcome"/></h1>
+<h1>Welcome to Spittr!<%-- <s:message code="spittr.welcome"/> --%></h1>
 
-<P><s:message code="spittr.time"/></P>
+<P><%-- <s:message code="spittr.time"/> --%></P>
 
-<a href="<c:url value="/spitts" />">Spitts</a>
-<a href="<c:url value="/spitter/register" />">Register</a>
+<s:url value="/spitts" var="spittsUrl">
+	<s:param name="max" value="60"/>
+	<s:param name="count" value="20"/>
+</s:url>
+
+<s:url value="/spitter/register" var="spitterUrl"/>
+
+<a href="${spittsUrl}">Spitts</a>
+<a href="${spitterUrl}">Register</a>
 </body>
 </html>
